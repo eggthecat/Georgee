@@ -4,4 +4,20 @@ function Pizza (size, toppings) {
   this.price = 0;
 }
 
-$(document).ready(function)
+Pizza.prototype.getPrice = function () {
+  this.toppings = forEAch(function(veggie){
+    this.price += 1;
+  })
+  if (this.size === large ){
+    this.price += 30;
+  } else if (this.size === medium){
+    this.price += 20;
+  } else if (this.size === small) {
+    this.price += 10;
+  }
+  return this.price;
+};
+
+$(document).ready(function(){
+  
+});
