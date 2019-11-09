@@ -1,6 +1,6 @@
 function Pizza (size, toppings) {
   this.size = size;
-  this.toppings = toppings:
+  this.toppings = toppings;
   this.price = 0;
 }
 
@@ -22,9 +22,13 @@ $(document).ready(function(){
   $("form#pizza_order_form").submit(function(event){
     event.preventDefualt();
     $("#pizza_order_form_response").show();
-    $("input:checkbox[name=pizza]:checked").each(function(){
-      var pizzaToppings = $(this).val();
-      $("#pizza_order_form_response").append(pizzaToppings + "<br>");
+    $("input:checkbox[name=pizzaToppings]:checked").each(function(){
+      let pizzaToppingsSelection = $(this).val();
+      let pizzaToppingsArray = [];
+
+      pizzaToppingsSelection.forEach(function(pizzaToppingsInput))
+
+      $("#pizza_order_form_response").append(pizzaToppingsSelection + "<br>");
     });
   });
 });
