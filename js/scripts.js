@@ -5,7 +5,7 @@ function Pizza (size, toppings) {
 }
 
 Pizza.prototype.getPrice = function () {
-  this.toppings = forEach(function(veggie){
+  this.toppings = forEach(function(topping){
     this.price += 1;
   });
   if (this.size === large ){
@@ -19,5 +19,12 @@ Pizza.prototype.getPrice = function () {
 };
 
 $(document).ready(function(){
-
+  $("form#pizza_order_form").submit(function(event){
+    event.preventDefualt();
+    $("#pizza_order_form_response").show();
+    $("input:checkbox[name=pizza]:checked").each(function(){
+      var pizzaToppings = $(this).val();
+      $("#pizza_order_form_response").append(pizzaToppings + "<br>");
+    });
+  });
 });
